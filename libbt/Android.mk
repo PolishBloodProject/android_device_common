@@ -1,5 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
+ifneq ($(BOARD_HAVE_BLUETOOTH_BCM),)
+
 include $(CLEAR_VARS)
 
 BDROID_DIR := $(TOP_DIR)external/bluetooth/bluedroid
@@ -32,6 +34,7 @@ ifeq ($(TARGET_PRODUCT), full_haida)
     include $(LOCAL_PATH)/conf/semc/haida/Android.mk
 endif
 ifeq ($(TARGET_PRODUCT), full_coconut)
-    include $(LOCAL_PATH)/conf/semc/haida/Android.mk
+    include $(LOCAL_PATH)/conf/semc/coconut/Android.mk
 endif
 
+endif # BOARD_HAVE_BLUETOOTH_BCM
